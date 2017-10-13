@@ -1,0 +1,27 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "src/modules",
+          "node_modules"
+        ]
+      }
+    }
+  }
+}
