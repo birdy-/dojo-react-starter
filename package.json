@@ -1,0 +1,84 @@
+{
+  "name": "dojo-react-starter",
+  "version": "0.0.1",
+  "description": "Dojo React",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack -p",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "prettier": "prettier --write '{src,unit-test-setup,webpack}/**/{*.js,*.scss}'",
+    "prettier:diff": "prettier --list-different '{src,unit-test-setup,webpack}/**/{*.js,*.scss}'",
+    "lint": "eslint '{src,unit-test-setup,webpack}/**/*.js'"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "setupFiles": [
+      "<rootDir>/unit-test-setup/jest-shim.js",
+      "<rootDir>/unit-test-setup/jest-config.js"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js"
+    ],
+    "modulePaths": [
+      "src/modules"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/abtasty/turfu/dashboard.git"
+  },
+  "author": "CD",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "immutable": "^3.8.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-register-module": "0.0.1",
+    "redux-saga": "^0.15.6",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "hash-assets-webpack-plugin": "^0.3.2",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "node-sass": "^4.5.3",
+    "postcss-flexbugs-fixes": "^3.2.0",
+    "postcss-loader": "^2.0.7",
+    "prettier": "1.7.4",
+    "react-test-renderer": "^16.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  }
+}
