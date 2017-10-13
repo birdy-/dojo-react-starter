@@ -114,6 +114,6 @@ module.exports = {
     react: 'React',
     'react-dom': 'ReactDOM',
     immutable: 'Immutable',
-    redux: 'redux',
+    redux: 'Redux',
   },
 };
