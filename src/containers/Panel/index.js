@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const Panel = ({ lastname, firstname, age }) => (
@@ -20,4 +21,10 @@ Panel.propTypes = {
   age: PropTypes.string.isRequired,
 };
 
-export default Panel;
+const mapStateToProps = state => ({
+  age: state.form.get('age'),
+  lastname: state.form.get('lastname'),
+  firstname: state.form.get('firstname'),
+});
+
+export default connect(mapStateToProps)(Panel);

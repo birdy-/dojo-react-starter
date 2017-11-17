@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { setFirstname, setLastname, setAge } from '../../actions';
 import InputText from '../../components/InputText';
 import Button from '../../components/Button';
 
@@ -16,7 +19,7 @@ class Form extends Component {
   }
 
   onSubmit() {
-    console.log(this.state);
+    this.props.updateValues(this.state.form.firstname, this.state.form.lastname, this.state.form.age);
   }
 
   onChange(key, value) {
@@ -49,4 +52,18 @@ class Form extends Component {
   }
 }
 
-export default Form;
+Form.propTypes = {
+  updateValues: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = dispatch => ({
+  updateValues: (firstname, lastname, age) => {
+    dispatch(setFirstname(firstname)); // dispatch({ type: 'SET_FIRSTNAME', value: firstname })
+    dispatch(setLastname(lastname));
+    dispatch(setAge(age));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
